@@ -3,3 +3,7 @@ body {
   max-height: 100vh;
   background-color: green;
 }
+
+img {
+  width: 5%;
+}
