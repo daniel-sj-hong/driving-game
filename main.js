@@ -1,7 +1,7 @@
-var $car = document.querySelector('img');
+var $car = document.querySelector('.car');
 
-$car.addEventListener('keydown', turn);
+document.addEventListener('keydown', turn);
 
 function turn(event) {
-  $car.setAttribute();
+
 }

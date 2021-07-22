@@ -7,3 +7,19 @@ body {
 img {
   width: 5%;
 }
+
+.face-east {
+  transform: rotate(360deg);
+}
+
+.face-west {
+  transform: rotate(180deg);
+}
+
+.face-north {
+  transform: rotate(270deg);
+}
+
+.face-south {
+  transform: rotate(90deg);
+}
