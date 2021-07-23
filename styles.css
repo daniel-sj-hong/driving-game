@@ -23,3 +23,7 @@ img {
 .face-south {
   transform: rotate(90deg);
 }
+
+img {
+  position: absolute;
+}
