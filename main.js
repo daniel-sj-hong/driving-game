@@ -1,6 +1,9 @@
 var $car = document.querySelector('.car');
+var distance = 0;
+var id = null;
 
-document.addEventListener('keydown', turn);
+window.addEventListener('keydown', turn);
+window.addEventListener('keydown', handleKeyDown);
 
 function turn(event) {
   if (event.key === 'ArrowRight') {
@@ -12,4 +15,15 @@ function turn(event) {
   } else if (event.key === 'ArrowDown') {
     $car.className = 'face-south';
   }
+}
+
+function handleKeyDown(event) {
+  if (event.key === ' ') {
+    id = setInterval(move, 16);
+  }
+}
+
+function move(event) {
+  distance++;
+  $car.style.left = distance + 'px';
 }
