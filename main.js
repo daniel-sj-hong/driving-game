@@ -1,11 +1,11 @@
 var $car = document.querySelector('.car');
 var distance = 0;
 var id = null;
+var gas = false;
 
-window.addEventListener('keydown', turn);
-window.addEventListener('keydown', handleKeyDown);
+window.addEventListener('keydown', car);
 
-function turn(event) {
+function car(event) {
   if (event.key === 'ArrowRight') {
     $car.className = 'face-east';
   } else if (event.key === 'ArrowLeft') {
@@ -15,15 +15,18 @@ function turn(event) {
   } else if (event.key === 'ArrowDown') {
     $car.className = 'face-south';
   }
-}
-
-function handleKeyDown(event) {
   if (event.key === ' ') {
-    id = setInterval(move, 16);
+    if (!gas) {
+      gas = true;
+      id = setInterval(move, 4);
+    } else {
+      gas = false;
+      clearInterval(id);
+    }
   }
 }
 
 function move(event) {
-  distance++;
+  distance += 4;
   $car.style.left = distance + 'px';
 }
